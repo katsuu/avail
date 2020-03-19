@@ -1,0 +1,2 @@
+class HangoutChat < ApplicationRecord
+end
