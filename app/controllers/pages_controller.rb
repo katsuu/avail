@@ -5,4 +5,7 @@ class PagesController < ApplicationController
     # ACCESS TO AVAILBILITY
     # WAY TO START NEW HANGOUT
   end
+
+  def mysettings
+  end
 end

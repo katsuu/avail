@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :hangouts
   has_many :friend_groups
   has_many :group_members
+  # has_many :friendships
 
   has_one_attached :avatar
 end

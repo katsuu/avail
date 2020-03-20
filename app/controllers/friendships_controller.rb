@@ -1,6 +1,11 @@
 class FriendshipsController < ApplicationController
   before_action :find_friendship, only: [:edit, :update, :destroy]
 
+  # Can user has_many friendships? We have receiver and sender ids connected to user
+  # def index
+  #   @friendships = current_user.friendships
+  # end
+
   def new
     @friendship = Friendship.new
   end
