@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_193129) do
   end
 
   create_table "friendships", force: :cascade do |t|
-    t.bigint "sender_id"
-    t.bigint "receiver_id"
+    t.bigint "sender_id", null: false
+    t.bigint "receiver_id", null: false
     t.string "approved", default: "Pending"
     t.boolean "close_friend", default: false
     t.datetime "created_at", precision: 6, null: false
@@ -68,9 +68,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_193129) do
   end
 
   create_table "hangouts", force: :cascade do |t|
-    t.time "start_time"
-    t.time "end_time"
-    t.date "date"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string "category"
     t.string "address"
     t.bigint "user_id", null: false

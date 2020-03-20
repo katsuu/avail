@@ -1,9 +1,8 @@
 class CreateHangouts < ActiveRecord::Migration[6.0]
   def change
     create_table :hangouts do |t|
-      t.time :start_time
-      t.time :end_time
-      t.date :date
+      t.datetime :start_time
+      t.datetime :end_time
       t.string :category
       t.string :address
       t.references :user, null: false, foreign_key: true

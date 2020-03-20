@@ -1,6 +1,6 @@
 class Hangout < ApplicationRecord
   belongs_to :user
-  belongs_to :hangout_chat
+  has_one :hangout_chat
   has_many :hangout_invitees
 
   validates :start_time, presence: true
