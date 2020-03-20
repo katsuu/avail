@@ -1,0 +1,12 @@
+<!-- Calendar -->
+
+<%= simple_form_for @hangout do |f| %>
+  <p>What do you want to do?</p>
+  <%= f.input :category, label: false, collection: ['Any', 'Productive', 'Explore', 'Learn', 'Fun', 'Other'] %>
+  <p>For how long?</p>
+  <%= f.input :start_time, label:false %>
+  <%= f.input :end_time, label:false %>
+  <p>Where will you be?</p>
+  <%= f.input :address, label:false, placeholder: 'Type an address' %>
+  <%= f.submit 'Schedule hangout', class: "btn btn-block btn-dark" %>
+<% end %>
