@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true
-  validates :username, presence: true, uniqueness: true
+  # validates :name, presence: true
+  validates :username, uniqueness: true
   validates :availability, inclusion: { in: [true, false] }
 
   has_many :hangouts

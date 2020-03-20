@@ -1,11 +1,25 @@
 <h1>Map</h1>
 
+
+<%= link_to toggle_availability_path(current_user), method: :patch do %>
+  <% if current_user.availability %>
+    <h3>You are currently available</h3>
+    <p><%= icon('fa', 'toggle-on') %></p>
+  <% else %>
+    <h3>You are currently not available</h3>
+    <p><%= icon('fa', 'toggle-off') %></p>
+  <% end %>
+<% end %>
+
+
 <h2>What would you like to do?</h2>
 
-<%= link_to hangout_path() do %>
+<%= link_to new_hangout_path do %>
   <button>Are you around?</button>
 <% end %>
 
-<%= link_to hangout_path() do %>
+<%= link_to new_hangout_path do %>
   <button>Schedule hangout</button>
 <% end %>
+
+<!-- Need two new hangout paths? -->

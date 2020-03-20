@@ -6,6 +6,13 @@ class PagesController < ApplicationController
     # WAY TO START NEW HANGOUT
   end
 
+  def toggle_availability
+    current_user.availability = !current_user.availability
+    current_user.save
+
+    redirect_to home_path
+  end
+
   def mysettings
   end
 end
