@@ -5,6 +5,8 @@ class CreateHangouts < ActiveRecord::Migration[6.0]
       t.datetime :end_time
       t.string :category
       t.string :address
+      t.float :latitude
+      t.float :longitude
       t.string :name
       t.references :user, null: false, foreign_key: true
 
