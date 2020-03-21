@@ -2,7 +2,10 @@
 
 
 <%= link_to toggle_availability_path(current_user), method: :patch do %>
-  <% if current_user.availability %>
+  <% if !current_user %>
+    <p>Sign in</p>
+
+  <% elsif current_user.availability %>
     <h3>You are currently available</h3>
     <p><%= icon('fa', 'toggle-on') %></p>
   <% else %>

@@ -44,8 +44,10 @@ ActiveRecord::Schema.define(version: 2020_03_19_193129) do
   end
 
   create_table "hangout_chats", force: :cascade do |t|
+    t.bigint "hangout_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["hangout_id"], name: "index_hangout_chats_on_hangout_id"
   end
 
   create_table "hangout_invitees", force: :cascade do |t|
@@ -72,11 +74,10 @@ ActiveRecord::Schema.define(version: 2020_03_19_193129) do
     t.datetime "end_time"
     t.string "category"
     t.string "address"
+    t.string "name"
     t.bigint "user_id", null: false
-    t.bigint "hangout_chat_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["hangout_chat_id"], name: "index_hangouts_on_hangout_chat_id"
     t.index ["user_id"], name: "index_hangouts_on_user_id"
   end
 
@@ -100,10 +101,10 @@ ActiveRecord::Schema.define(version: 2020_03_19_193129) do
   add_foreign_key "friendships", "users", column: "sender_id"
   add_foreign_key "group_members", "friend_groups"
   add_foreign_key "group_members", "users"
+  add_foreign_key "hangout_chats", "hangouts"
   add_foreign_key "hangout_invitees", "hangouts"
   add_foreign_key "hangout_invitees", "users"
   add_foreign_key "hangout_messages", "hangout_chats"
   add_foreign_key "hangout_messages", "users"
-  add_foreign_key "hangouts", "hangout_chats"
   add_foreign_key "hangouts", "users"
 end

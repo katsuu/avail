@@ -2,7 +2,7 @@ class HangoutsController < ApplicationController
   before_action :find_hangout, only: [:show, :edit, :update, :destroy]
 
   def index
-    @hangouts = User.hangouts # SHOULD BE HANGOUTS CREATED AND INVITED TO
+    @hangouts = current_user.hangouts # SHOULD BE HANGOUTS CREATED AND INVITED TO
   end
 
   def show; end
@@ -14,12 +14,16 @@ class HangoutsController < ApplicationController
   def create
     @hangout = Hangout.new(hangout_params)
     @hangout.user = current_user
-    @hangout_chat = HangoutChat.new #(hangout_chat_params) WHEN CREATED
-    @hangout.hangout_chat = @hangout_chat
     if @hangout.save
-      # redirect_to TBD ROUTING...
+      @hangout_chat = HangoutChat.new #(hangout_chat_params) WHEN CREATED
+      @hangout_chat.save
+      @hangout.hangout_chat = @hangout_chat
+      if @hangout.save
+
+        redirect_to hangouts_path
+      end
     else
-      # TBD ...
+      render 'hangouts/new'
     end
   end
 
@@ -41,9 +45,9 @@ class HangoutsController < ApplicationController
     params.require(:hangout).permit(
       :start_time,
       :end_time,
-      :date,
       :category,
-      :address
+      :address,
+      :name
       )
   end
 

@@ -1,7 +1,8 @@
 <!-- Calendar -->
 
 <%= simple_form_for @hangout do |f| %>
-  <p>What do you want to do?</p>
+  <%= f.input :name, label: false, placeholder: "What's this hangout for?" %>
+  <p>Which category?</p>
   <%= f.input :category, label: false, collection: ['Any', 'Productive', 'Explore', 'Learn', 'Fun', 'Other'] %>
   <p>For how long?</p>
   <%= f.input :start_time, label:false %>
