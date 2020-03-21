@@ -5,7 +5,8 @@ class Hangout < ApplicationRecord
 
   validates :start_time, presence: true
   validates :end_time, presence: true
-  validates :date, presence: true
+  validates :name, presence: true
+  validates :address, presence: true
   validates :category, presence: true, inclusion: { in: ['Any', 'Productive', 'Explore', 'Learn', 'Fun', 'Other'] }
 
 end
