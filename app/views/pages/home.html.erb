@@ -1,5 +1,4 @@
-<!-- Map -->
-
+<%= render 'shared/user_location_map' %>
 
 <%= link_to toggle_availability_path(current_user), method: :patch do %>
   <% if current_user.availability %>
