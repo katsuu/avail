@@ -5,8 +5,8 @@ class CreateHangouts < ActiveRecord::Migration[6.0]
       t.datetime :end_time
       t.string :category
       t.string :address
+      t.string :name
       t.references :user, null: false, foreign_key: true
-      t.references :hangout_chat, null: false, foreign_key: true
 
       t.timestamps
     end
