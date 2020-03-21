@@ -1,28 +1,27 @@
-<!-- Map -->
+<% if user_signed_in? %>
+  <%= render 'shared/user_location_map' %>
 
-
-<%= link_to toggle_availability_path(current_user), method: :patch do %>
-  <% if !current_user %>
-    <p>Sign in</p>
-
-  <% elsif current_user.availability %>
-    <h3>You are currently available</h3>
-    <p><%= icon('fa', 'toggle-on') %></p>
-  <% else %>
-    <h3>You are currently not available</h3>
-    <p><%= icon('fa', 'toggle-off') %></p>
+  <%= link_to toggle_availability_path(current_user), method: :patch do %>
+    <% if current_user.availability %>
+      <h3>You are currently available</h3>
+      <p><%= icon('fa', 'toggle-on') %></p>
+    <% else %>
+      <h3>You are currently not available</h3>
+      <p><%= icon('fa', 'toggle-off') %></p>
+    <% end %>
   <% end %>
+
+  <h2>What would you like to do?</h2>
+  <!-- Need two new hangout paths? -->
+
+  <%= link_to new_hangout_path do %>
+    <button>Are you around?</button>
+  <% end %>
+
+  <%= link_to new_hangout_path do %>
+    <button>Schedule hangout</button>
+  <% end %>
+<% else %>
+  <p>please log in</p>
 <% end %>
 
-
-<h2>What would you like to do?</h2>
-
-<%= link_to new_hangout_path do %>
-  <button>Are you around?</button>
-<% end %>
-
-<%= link_to new_hangout_path do %>
-  <button>Schedule hangout</button>
-<% end %>
-
-<!-- Need two new hangout paths? -->
