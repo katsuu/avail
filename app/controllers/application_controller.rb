@@ -3,5 +3,8 @@ class ApplicationController < ActionController::Base
 
   def user_location
     @user_location = Geocoder.search(request.remote_ip).first.coordinates
+    if @user_location.empty?
+      # FLASH MESSAGE
+    end
   end
 end
