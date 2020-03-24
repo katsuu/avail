@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
 
-gem 'geocoder'
-
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -17,6 +15,10 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
+gem 'geocoder'
+gem 'turbolinks_render'
+gem 'turbolinks', '~> 5.2.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

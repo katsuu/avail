@@ -2,7 +2,13 @@ class HangoutsController < ApplicationController
   before_action :find_hangout, only: [:show, :edit, :update, :destroy]
 
   def index
-    @hangouts = current_user.hangouts # SHOULD BE HANGOUTS CREATED AND INVITED TO
+    @hangouts = current_user.hangouts.geocoded # SHOULD BE HANGOUTS CREATED AND INVITED TO
+    @markers = @hangouts.map do |hangout|
+      {
+        lat: hangout.latitude,
+        lng: hangout.longitude,
+      }
+    end
   end
 
   def show; end

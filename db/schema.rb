@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_193129) do
     t.datetime "end_time"
     t.string "category"
     t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.string "name"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
