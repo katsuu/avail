@@ -1,12 +1,28 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+.mobile-navbar {
+  background: lightgrey;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  padding: 12px 8px;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+    li {
+      display: inline;
+      font-size: 2.5em;
+
+      a {
+        color: grey;
+
+        &:hover {
+          color: rgb(80, 80, 80);
+        }
+      }
+    }
+  }
 }
