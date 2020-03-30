@@ -1,5 +1,5 @@
 .mobile-navbar {
-  background: lightgrey;
+  background: linear-gradient(rgb(175, 175, 175), rgb(95, 95, 95));
   width: 100vw;
   position: fixed;
   bottom: 0;
@@ -17,10 +17,10 @@
       font-size: 2.5em;
 
       a {
-        color: grey;
+        color: rgb(230, 230, 230);
 
         &:hover {
-          color: rgb(80, 80, 80);
+          color: rgb(200, 200, 200);
         }
       }
     }

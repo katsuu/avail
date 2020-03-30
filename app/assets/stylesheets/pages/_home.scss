@@ -1,1 +1,36 @@
-// Specific CSS for your home-page
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .avail-toggle {
+    text-align: center;
+
+    h3 {
+      color: black;
+      margin: 0;
+    }
+
+    i {
+      margin: 0;
+      font-size: 3.2em;
+    }
+
+    a {
+      .toggle-avail {
+        color: green;
+      }
+
+      .toggle-busy {
+        color: red;
+      }
+    }
+  }
+
+  .btn-avail-primary {
+    margin-top: 20px;
+    font-size: 1.6em;
+  }
+}
+
